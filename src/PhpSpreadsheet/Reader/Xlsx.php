@@ -908,7 +908,7 @@ class Xlsx extends BaseReader
 
                                         // Read cell?
                                         if ($this->getReadFilter() !== null) {
-                                            $coordinates = Coordinate::coordinateFromString($r);
+                                            $coordinates = Coordinate::coordinateFromString(strtoupper($r));
 
                                             if (!$this->getReadFilter()->readCell($coordinates[0], (int) $coordinates[1], $docSheet->getTitle())) {
                                                 $rowIndex += 1;
